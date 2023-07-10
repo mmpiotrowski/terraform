@@ -1,0 +1,2 @@
+BASE_IMAGE_DOCKERHUB_REPO=mppiotrowski/aws-cli
+DOCKERHUB_REPO=mppiotrowski/terraform
