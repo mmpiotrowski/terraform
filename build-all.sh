@@ -13,7 +13,6 @@ REFS_TAG=$(git ls-remote --tags https://github.com/mmpiotrowski/aws-cli.git | aw
 BASE_IMAGE_AWS_CLI_V2=${REFS_TAG/"refs/tags/"/""}
 
 ./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V1"
-#./push.sh $CURRENT_AWS_CLI_V1
 
 ./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V2"
 
