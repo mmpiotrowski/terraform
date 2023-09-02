@@ -12,18 +12,16 @@ BASE_IMAGE_AWS_CLI_V1=${REFS_TAG/"refs/tags/"/""}
 REFS_TAG=$(git ls-remote --tags https://github.com/mmpiotrowski/aws-cli.git | awk '{print $2}' | grep /2. | sort -rV | head -n1)
 BASE_IMAGE_AWS_CLI_V2=${REFS_TAG/"refs/tags/"/""}
 
-./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V1"
-
-./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V2"
-
 UPDATED=0
 
 if ! git tag -l | grep -q "${CURRENT_TERRAFORM_VERSION}-${BASE_IMAGE_AWS_CLI_V1}"; then
+   ./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V1"
    git tag "${CURRENT_TERRAFORM_VERSION}-${BASE_IMAGE_AWS_CLI_V1}"
    UPDATED=1
 fi
 
 if ! git tag -l | grep -q "${CURRENT_TERRAFORM_VERSION}-${BASE_IMAGE_AWS_CLI_V2}"; then
+   ./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V2"
    git tag "${CURRENT_TERRAFORM_VERSION}-${BASE_IMAGE_AWS_CLI_V2}"
    UPDATED=1
 fi
