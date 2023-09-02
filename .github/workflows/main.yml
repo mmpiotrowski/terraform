@@ -2,7 +2,7 @@ name: build-and-push-to-dh
 on:
    schedule:
      # * is a special character in YAML so you have to quote this string
-     - cron:  '15 21 * * *'
+     - cron:  '30 21 * * *'
 jobs:
   scheduled-update:
     runs-on: ubuntu-latest
