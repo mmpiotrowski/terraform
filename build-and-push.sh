@@ -19,9 +19,7 @@ fi;
 docker build \
   --build-arg BASE_IMAGE_AWS_CLI="${BASE_IMAGE_DOCKERHUB_REPO}:${BASE_IMAGE_AWS_CLI}" \
   --build-arg TERRAFORM_VERSION="${TERRAFORM_VERSION}" \
-  -t "${DOCKERHUB_REPO}":"${TERRAFORM_VERSION}-aws-cli-${BASE_IMAGE_AWS_CLI}" \
   -t "${DOCKERHUB_REPO}:${TERRAFORM_VERSION}-aws-cli-${TAG}" \
   .
 
-docker push "${DOCKERHUB_REPO}:${TERRAFORM_VERSION}-aws-cli-${BASE_IMAGE_AWS_CLI}"
 docker push "${DOCKERHUB_REPO}:${TERRAFORM_VERSION}-aws-cli-${TAG}"
