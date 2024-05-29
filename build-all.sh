@@ -16,7 +16,7 @@ UPDATED=0
 
 if ! git ls-remote --tags https://github.com/mmpiotrowski/terraform.git | grep -q "${CURRENT_TERRAFORM_VERSION}-${BASE_IMAGE_AWS_CLI_V1}"; then
    ./build-and-push.sh $CURRENT_TERRAFORM_VERSION "$BASE_IMAGE_AWS_CLI_V1"
-   git tag "${CURRENT_TERRAFORM_VERSION}-${BASE_IMAGE_AWS_CLI_V1}"
+   git tag "${CURRENT_TERRAFORM_VERSION}"
    UPDATED=1
 fi
 
